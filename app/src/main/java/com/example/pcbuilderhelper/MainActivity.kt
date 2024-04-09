@@ -25,29 +25,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val call = ApiClient.service.getComponents()
-
-        call.enqueue(object : Callback<ApiResponse> {
-            override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
-                if (response.isSuccessful) {
-                    val apiResponse = response.body()
-                    val components = apiResponse?.result?.product_list?.document
-                    for (component in components.orEmpty()) {
-                        println("Nom: ${component.label}")
-                        println("Type: ${component.sublabel}")
-                        println("Prix: ${component.offer?.price?.price_final}")
-                    }
-                } else {
-                    val errorBody = response.errorBody()?.string()
-                    Log.e("API Error", "Error body: $errorBody")
-                }
-            }
-
-            override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
-                println("erreur lors de la récupération des composants 2")
-            }
-        })
-
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)

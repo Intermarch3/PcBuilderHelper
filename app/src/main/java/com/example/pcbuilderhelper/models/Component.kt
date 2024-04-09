@@ -1,6 +1,6 @@
 package com.example.pcbuilderhelper.models
 
-data class Component (
+data class BuildComponent (
     val name: String,
     val type: String,
     val brand: String,

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="component_name" type="id"/>
+    <item name="component_type" type="id"/>
+    <item name="component_price" type="id"/>
+</resources>

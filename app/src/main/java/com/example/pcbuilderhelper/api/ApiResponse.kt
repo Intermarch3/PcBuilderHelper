@@ -1,5 +1,5 @@
 package com.example.pcbuilderhelper.api
-import com.example.pcbuilderhelper.models.Component
+import com.example.pcbuilderhelper.models.BuildComponent
 
 data class Paging(
     val url_format: String?,
