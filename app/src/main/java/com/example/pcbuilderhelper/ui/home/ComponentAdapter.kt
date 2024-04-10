@@ -1,3 +1,4 @@
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,17 +27,23 @@ class ComponentAdapter(private var components: List<Product>) : RecyclerView.Ada
         return ComponentViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ComponentViewHolder, position: Int) {
-        val component = components[position]
-        holder.name.text = component.label
-        holder.type.text = component.sublabel
-        holder.price.text = component.offer?.price?.price_final.toString()
-    }
-
     override fun getItemCount() = components.size
 
     fun updateComponents(newComponents: List<Product>) {
         this.components = newComponents
         notifyDataSetChanged()
+    }
+
+    override fun onBindViewHolder(holder: ComponentViewHolder, position: Int) {
+        val component = components[position]
+        holder.name.text = component.label
+        holder.type.text = component.sublabel
+        holder.price.text = component.offer?.price?.price_final.toString()
+
+        // Ajouter un OnClickListener à la vue racine de chaque élément de la liste
+        holder.itemView.setOnClickListener {
+            // Ici, vous pouvez ajouter le code à exécuter lorsque l'utilisateur clique sur le composant
+            Log.d("ComponentAdapter", "Composant cliqué: ${component.label}")
+        }
     }
 }

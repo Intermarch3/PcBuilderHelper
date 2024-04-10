@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">PcBuilderHelper</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Composants</string>
+    <string name="title_dashboard">Mes builds</string>
+    <string name="title_notifications">Infos</string>
     <string-array name="component_types">
         <item>CPU</item>
         <item>GPU</item>

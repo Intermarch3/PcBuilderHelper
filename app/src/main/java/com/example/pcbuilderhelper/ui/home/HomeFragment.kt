@@ -12,6 +12,7 @@ import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pcbuilderhelper.R
@@ -59,6 +60,10 @@ class HomeFragment : Fragment() {
         val adapter = ComponentAdapter(emptyList())
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        // Ajouter une ligne de séparation entre chaque élément de la liste
+        val dividerItemDecoration = DividerItemDecoration(recyclerView.context, LinearLayoutManager.VERTICAL)
+        recyclerView.addItemDecoration(dividerItemDecoration)
 
         // Set an onItemSelectedListener to the Spinner
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
