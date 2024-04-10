@@ -4,4 +4,5 @@
     <item name="component_type" type="id"/>
     <item name="component_price" type="id"/>
     <item name="recyclerViewComponents" type="id"/>
+    <item name="build_name" type="id"/>
 </resources>

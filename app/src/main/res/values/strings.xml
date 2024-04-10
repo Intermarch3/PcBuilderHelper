@@ -3,6 +3,7 @@
     <string name="title_home">Composants</string>
     <string name="title_dashboard">Mes builds</string>
     <string name="title_notifications">Infos</string>
+    <string name="nouveau_build">Nouveau Build</string>
     <string-array name="component_types">
         <item>CPU</item>
         <item>GPU</item>
